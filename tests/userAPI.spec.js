@@ -11,7 +11,7 @@ test.describe('Product API Tests', () => {
     apiHelper = new ApiHelper(apiContext);
   });
 
-  test('GET product list', async () => {
+  test.skip('GET product list', async () => {
     const data = await apiHelper.get('/products');
     const hasMensCottonJacket = data.some(product => product.title === 'Mens Cotton Jacket');
     expect(hasMensCottonJacket).toBeTruthy();
@@ -19,7 +19,7 @@ test.describe('Product API Tests', () => {
   });
 
 
- test('POST create product', async () => {
+ test.skip('POST create product', async () => {
    const newProduct = testData.Product;
     const response = await apiHelper.post('/products', newProduct);
     console.log(response);

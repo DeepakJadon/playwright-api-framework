@@ -1,6 +1,7 @@
 #Project Specific
 allure-report
 allure-results
+test-results
 *.vscode
 
 # Logs
