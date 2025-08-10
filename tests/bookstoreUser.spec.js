@@ -207,7 +207,6 @@ test.describe.serial('FastAPI CRUD Tests', () => {
     {
     await apiHelper.loginAndSetToken(BookStoreCreateBookDataPayload,Endpoints.bookstorelogin );
     const books = await apiHelper.get(Endpoints.bookstoreuserbooks);
-    console.log(books);
     expect(Array.isArray(books)).toBeTruthy();
 
   });
@@ -222,7 +221,6 @@ test('12 -  Get all books with expired token', async () => {
     await new Promise(resolve => setTimeout(resolve, 2000)); 
     await apiHelper.setExpiredToken(Endpoints.bookstoretokenType,Endpoints.bookstoreexpiredtoken)
     const body = await apiHelper.get(Endpoints.bookstoreuserbooks);
-    console.log(body);
     expect(body.detail).toBe(Messages.userInvalidExpiredToken);
 
     });
